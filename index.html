@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript" src="js/slideGall.js" defer></script>
+  <script type="text/javascript" src="js/menu.js" defer></script>
+  <script type="text/javascript" src="js/shopCart.js" defer></script>
+  <script type="text/javascript" src="js/toggle-menu.js"></script>
+  <title>Mânuțe Hărnicuțe</title>
+</head>
+<body>
+  <!-- Top Header -->
+  <header id="main-header">
+      <a href="index.html" class="logo"><img src="img/logo.png" alt=""></a>
+      <div class="nav-menu">
+        <a onclick="moveWindow(0)">Home</a>
+        <a onclick="moveWindow(prodPage.offsetTop - 46)" class="sub-menu">Magazin</a>
+          <!-- <div class="prod-categ">
+            <a href="">Anul Nou</a>
+            <a href="">Papusi</a>
+            <a href="">Iepuri</a>
+            <a href="">Flori</a>
+          </div> -->
+        <a onclick="moveWindow(infoPage.offsetTop - 46)">Informații</a>
+        <a onclick="moveWindow(contactPage.offsetTop - 46)">Contacte</a>
+      </div>
+      <a onclick="toggleShow(shopCart)" class="cart cart-toggle">
+        <img class="cart-toggle" src="img/cart.png" alt="">
+      </a>
+        <div class="shop-cart cart-toggle"></div>
+      <div class="phone-btn toggle" onclick="toggleShow(phoneMenu)"><img class="toggle" src="img/menu.png" alt=""></div>
+        <div class="phone-menu">
+          <a onclick="moveWindow(0)">Home</a>
+          <a onclick="moveWindow(prodPage.offsetTop - 46)">Magazin</a>
+          <a onclick="moveWindow(infoPage.offsetTop - 46)">Informații</a>
+          <a onclick="moveWindow(contactPage.offsetTop - 46)">Contacte</a>
+          <div class="languages">
+            <a href="index.html" class="cur-page">Ro</a>
+            <a href="index-ru.html">Ru</a>
+            <a href="index-en.html">En</a>
+          </div>
+        </div>
+      <div class="languages">
+        <a href="index.html" class="cur-page">Ro</a>
+        <a href="index-ru.html">Ru</a>
+        <a href="index-en.html">En</a>
+      </div>
+  </header>
+  <!-- Top Header End -->
+
+  <!-- Side Navigation Bar -->
+  <!-- <div id="side-nav-bar">
+    <div>
+      <img src="img/logo.png" alt="Mânuțe Hărnicuțe">
+      <div id="lang"></div>
+    </div>
+    <div><img onclick="moveWindow(0)" src="img/home.png" alt="Home"></div>
+    <div><img onclick="moveWindow(prodPage.offsetTop)" src="img/shop.png" alt="Magazin"></div>
+    <div><img onclick="moveWindow(infoPage.offsetTop)" src="img/info.png" alt="Informații"></div>
+    <div><img onclick="moveWindow(contactPage.offsetTop)" src="img/contact.png" alt="Contacte"></div>
+  </div> -->
+  <!-- Side Navigation Bar End -->
+
+  <div id="page-content">
+    <div id="main-page">
+      <div>
+        <h3>mânuțe hărnicuțe</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+           In porttitor interdum arcu hendrerit porttitor.
+            Morbi id maximus velit, quis pretium diam. Sed id urna nibh.
+            Vestibulum tristique lorem a vulputate vulputate.</p>
+      </div>
+      <img src="asets/gHouse.jpg" alt="0">
+    </div>
+    <h4 class="prod">Magazin</h4>
+    <div id="product-page">
+      <div onclick="" class="product">
+        <img src="asets/handMade.jpg" alt="">
+        <h5>Anul Nou</h5>
+        <p>100 Lei</p>
+        <div class="buy-product">
+          <div>  
+            <button class="minus">-</button>
+            <p class="amount">1</p>
+            <button class="plus">+</button>
+          </div>
+          <button class="add-to-cart">Add to cart</button>
+        </div>
+      </div>
+      <div onclick="" class="product">
+        <img src="asets/handMade.jpg" alt="">
+        <h5>Hand Made</h5>
+        <p>1000 Lei</p>
+        <div class="buy-product">
+          <div>  
+            <button class="minus">-</button>
+            <p class="amount">1</p>
+            <button class="plus">+</button>
+          </div>
+          <button class="add-to-cart">Add to cart</button>
+        </div>
+      </div>
+      <div onclick="" class="product">
+        <img src="asets/handMade.jpg" alt="">
+        <h5>Motan</h5>
+        <p>100000 Lei</p>
+        <div class="buy-product">
+          <div>  
+            <button class="minus">-</button>
+            <p class="amount">1</p>
+            <button class="plus">+</button>
+          </div>
+          <button class="add-to-cart">Add to cart</button>
+        </div>
+      </div>
+      <div onclick="" class="product">
+        <img src="asets/handMade.jpg" alt="">
+        <h5>Papusa</h5>
+        <p>300 Lei</p>
+        <div class="buy-product">
+          <div>  
+            <button class="minus">-</button>
+            <p class="amount">1</p>
+            <button class="plus">+</button>
+          </div>
+          <button class="add-to-cart">Add to cart</button>
+        </div>
+      </div>
+    </div>
+    <h4 class="info">Informații</h4>
+    <div id="info-page">
+      <!-- Slide-Gallery -->
+      <div>
+        <img src="asets/ofice2.jpg" alt="">
+      </div>
+      <p>Informații generale despre autorul hand-made-urilor. Si despre nașterea ideii creării
+        hand-made-urilor. Informații despre familia s-a cine o ajută. Cum se crează produsul și Cum
+        îl livrează.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ligula euismod, blandit tortor ac, lacinia urna. Phasellus tempus sed turpis in pulvinar. Praesent eu condimentum metus, sed mollis turpis.
+      </p>
+    </div>
+    <h4 class="contact">Contacte</h4>
+    <div id="contact-page">
+      <!-- Social Media -->
+      <ul>
+        <a href="">test@gmail.com</a>
+        <a href="">+373 78 123 456</a>
+      </ul>
+      <img src="" alt="">
+    </div>
+  </div>
+</body>
+</html>
