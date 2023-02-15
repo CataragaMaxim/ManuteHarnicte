@@ -71,13 +71,17 @@ h5 {
   padding: 8px 2vw;
 }
 
+.cart:hover {
+  background-color: rgba(223, 219, 219, 0.5);
+}
+
 .shop-cart {
   background-color: rgba(223, 219, 219, 0.9);
   display: none;
   flex-direction: column;
   align-items: center;
   position: fixed;
-  width: 50vw;
+  width: 80vw;
   height: 100%;
   top: 46px;
   right: 0;
@@ -93,11 +97,16 @@ h5 {
 #main-header .cart-prod .prod-img {
   width: 30%;
   height: 90%;
+  border-radius: 10%;
   padding: 0 10px;
 }
 
 .cart-prod h5 {
   font-size: 30px;
+}
+
+.remove {
+  right: 5px;
 }
 
 .remove:hover {
@@ -154,7 +163,7 @@ h5 {
 }
 
 .nav-menu a:hover, .languages a:hover, .phone-btn:hover,
-.phone-menu a:hover, .phone-menu a:active, .cart:hover {
+.phone-menu a:hover, .phone-menu a:active {
   background-color: rgba(248, 244, 244, 50%);
   filter: invert(75%);
 }
@@ -235,10 +244,6 @@ h5 {
   align-items: center;
 }
 
-#info-page, #contact-page {
-  flex-direction: column;
-}
-
 #product-page {
   flex-wrap: wrap;
 }
@@ -302,6 +307,10 @@ h5 {
   font-size: 25px;
 }
 
+#info-page {
+  flex-direction: column;
+}
+
 #info-page p{
   padding: 0 6%;
   font-size: 30px;
@@ -314,6 +323,54 @@ h5 {
 
 #info-page img {
   width: 100%;
+}
+
+#contact-page {
+  flex-wrap: wrap;
+  margin: 0 0 50px 0;
+}
+
+.contact-list, .contact-data, .map, .contact-form {
+  width: 45%;
+}
+
+.contact-list, .contact-data {
+  list-style-type: none;
+  padding: 0;
+  margin: 5px 10px;
+}
+
+.contact-list li, .contact-data li {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 5px 0;
+  font-size: 20px;
+}
+
+.contact-data img {
+  height: 20px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.map {
+  height: 400px;
+  margin: 20px 10px 10px 10px;
+}
+
+.contact-form h3 {
+  font-size: 30px;
+}
+
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: 10px 0;
+  margin: 10px 0;
+  font-size: 25px;
 }
 
 @media (max-width: 1050px) {
@@ -381,6 +438,31 @@ h5 {
   #product-page .product {
     width: 80%;
   }
+  .contact-list, .contact-data, .contact-form {
+    width: 100%;
+    padding: 10px 0 10px 10px;
+  }
+  .map {
+    width: 95%;
+    padding: 0;
+    margin: 15px 0;
+  }
+  .contact-list li, .contact-data li {
+    font-size: 20px;
+  }
+  .contact-data img {
+    height: 15px;
+  }
+  .contact-form {
+    align-items: center;
+  }
+  .contact-form input, .contact-form textarea {
+    width: 95%;
+    padding: 10px 0;
+    padding-left: 5px;
+    margin: 10px 0;
+    font-size: 30px;
+  }
 }
 
 @media (max-width: 650px) {
@@ -405,7 +487,6 @@ h5 {
   #main-header .cart-prod .prod-img {
     width: 35%;
     height: 100%;
-    border-radius: 20%;
   }
   #main-page {
     height: 50vh;
