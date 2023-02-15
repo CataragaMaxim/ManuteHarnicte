@@ -1,8 +1,7 @@
 const plusEl = document.querySelectorAll('.plus');
 const minusEl = document.querySelectorAll('.minus');
 const products = document.querySelector('#product-page');
-const cart = document.querySelector('.shop-cart');
-const cartProducts = document.querySelector('.shop-cart .cart-prod');
+const cart = document.querySelector('.product-list');
 // const clearCartBtn = document.querySelector('.clear-cart');
 // const empty = document.querySelector('.empty');
 
@@ -52,8 +51,8 @@ function addToCart(product){
   const prod = document.createElement('div');
   for (let i = 0; i < cart.childNodes.length; i++) {
     if (cart.childNodes[i].children[1].children[0].textContent == product.name) {
-      cart.childNodes[i].children[2].children[1].textContent = parseInt(cart.childNodes[i].children[3].textContent) + parseInt(product.amount);
-      cart.childNodes[i].children[1].children[2].textContent = parseInt(product.price)*parseInt(cart.childNodes[i].children[2].children[1].textContent);
+      cart.childNodes[i].children[2].children[1].textContent = parseInt(cart.childNodes[i].children[2].children[1].textContent) + parseInt(product.amount);
+      cart.childNodes[i].children[1].children[1].children[0].textContent = parseInt(product.price)*parseInt(cart.childNodes[i].children[2].children[1].textContent);
       return;
     }
   }
@@ -62,40 +61,46 @@ function addToCart(product){
   <img src="${product.image}" class="prod-img">    
   <div class="prod-info">
     <h5>${product.name}</h5>
-    <p alt="${product.price}"><p>${parseInt(product.price)*parseInt(product.amount)}</p> lei</p>
+    <div><p>${parseInt(product.price)*parseInt(product.amount)}</p><p>lei</p></div>
   </div>
-  <div>  
+  <div class="prod-calc">  
     <button class="minus">-</button>
-    <p class="amount">1</p>
+    <p class="amount">${product.amount}</p>
     <button class="plus">+</button>
   </div>
   <img src="img/remove.png" class="remove">
-`;
-  for (let i = 0; i < cartProducts.length; i++) {
-
-  };
+  `;
   cart.appendChild(prod);
+  prod.children[1].children[1].alt = parseInt(product.price);
+  for (let i = 0; i < cart.childNodes.length; i++) {
+    if (cart.childNodes[i].children[1].children[0].textContent == product.name) {
+      const minusCartEl = cart.childNodes[i].children[2].children[0];
+      const plusCartEl = cart.childNodes[i].children[2].children[2];
+      minusCartEl.addEventListener('click', minusCart);
+      plusCartEl.addEventListener('click', plusCart);
+    }
+  };
 }
 
 function plusCart(e) {
   let amount = parseInt(e.target.previousElementSibling.innerHTML);
   let price = parseInt(e.target.parentElement.parentElement.children[1].children[1].alt);
   amount = amount + 1;
-  console.dir(e.target);
   e.target.previousElementSibling.innerHTML = amount;
-
+  e.target.parentElement.parentElement.children[1].children[1].children[0].textContent = price * amount;
 }
 
 function minusCart(e) {
   let amount = parseInt(e.target.nextElementSibling.innerHTML);
+  let price = parseInt(e.target.parentElement.parentElement.children[1].children[1].alt);
   if (amount <= 1) {
     amount = 1;
     e.target.nextElementSibling.innerHTML = amount;
-    return e.target.parentElement.parentElement.children[1].children[2].textContent = parseInt(price)*parseInt(amount);
+    return e.target.parentElement.parentElement.children[1].children[1].children[0].textContent = price * amount;
   }
   amount = amount - 1;
   e.target.nextElementSibling.innerHTML = amount;
-  return e.target.parentElement.parentElement.children[1].children[2].textContent = parseInt(price)*parseInt(amount);
+  return e.target.parentElement.parentElement.children[1].children[1].children[0].textContent = price * amount;
 }
 
 function removeProduct(e){
