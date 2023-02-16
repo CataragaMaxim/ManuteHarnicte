@@ -1,16 +1,19 @@
-const mainSlideGall = document.querySelector('#main-page img');
+// const mainSlideGall = document.querySelector('#main-page img');
+const mainPageGall = document.querySelector('#main-page');
+console.dir(mainPageGall)
+
 let i = 0;
 
-const slideGallImages = ["asets/gHouse.jpg", "asets/gHouse2.jpg", "asets/gHouse3.png"];
+const slideGallImages = ["url('gallery/m5.jpg')", "url('gallery/an1.jpg')", "url('gallery/p11.jpg')"];
 
 function repeatChange() {
-  if (i >= 2) {
-    i = 0;
-    mainSlideGall.src = slideGallImages[i];
-  } else {
-    i++
-    mainSlideGall.src = slideGallImages[i];
-  }
+    if (i < slideGallImages.length - 1) {
+      i++
+      mainPageGall.style.backgroundImage = slideGallImages[i];
+    } else {
+      i = 0;
+      mainPageGall.style.backgroundImage = slideGallImages[i];
+    }
 }
 
-setInterval(repeatChange, 6000);
+setInterval(repeatChange, 4000);
