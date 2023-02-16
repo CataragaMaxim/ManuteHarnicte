@@ -258,8 +258,8 @@ h5 {
 
 #main-page img {
   position: absolute;
-  width: 100%;
-  height: 100vh;
+  width: 40%;
+  filter: invert(75%);
 }
 
 #product-page, #info-page, #contact-page {
@@ -410,10 +410,22 @@ h5 {
   .remove {
     right: 4vw;
   }
+  #main-page {
+    background: no-repeat center/150% url(../gallery/m5.jpg);
+  }
   #product-page .product {
     width: 40%;
   }
+  @media (min-height: 1000px) {
+    #main-page {
+      background: no-repeat center/200% url(../gallery/m5.jpg);
+    }
+    #main-page img {
+      width: 65%;
+    }
+  }
 }
+
 
 @media (max-width: 800px) {
   #side-nav-bar {
@@ -458,6 +470,7 @@ h5 {
     display: flex;
   }
   #main-page {
+    background: no-repeat center/210% url(../gallery/m5.jpg);
     width: 100%;
     height: 70vh;
   }
@@ -468,7 +481,7 @@ h5 {
     font-size: 20px;
   }  
   #main-page img {
-    display: none;
+    width: 45%;
   }
   #product-page .product {
     width: 80%;
@@ -530,7 +543,16 @@ h5 {
     width: 50%;
   }
   #main-page {
-    background: no-repeat center/200% url(../gallery/m5.jpg);
+    background: no-repeat center/210% url(../gallery/m5.jpg);
+  }
+  #main-page div {
+    padding: 0 3%;
+  }
+  #main-page div p {
+    font-size: 20px;
+  }
+  #main-page img {
+    width: 70%;
   }
   .prod-info {
     font-size: 25px;
@@ -542,12 +564,6 @@ h5 {
   }
   .prod-calc .minus, .prod-calc .plus {
     width: 20%;
-  }
-  #main-page div {
-    padding: 0 3%;
-  }
-  #main-page div p {
-    font-size: 20px;
   }
   #product-page .product {
     margin: 5% 0;

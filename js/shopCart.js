@@ -1,25 +1,18 @@
-const plusEl = document.querySelectorAll('.plus');
-const minusEl = document.querySelectorAll('.minus');
-const products = document.querySelector('#product-page');
 const cart = document.querySelector('.product-list');
 // const clearCartBtn = document.querySelector('.clear-cart');
 // const empty = document.querySelector('.empty');
 
-function loadEventListeners(){
-  for (let i = 0; i < minusEl.length; i++) {
-    minusEl[i].addEventListener('click', minus);
-    plusEl[i].addEventListener('click', plus);
+function buyProduct(e){
+  if(e.target.classList.contains('add-to-cart')){
+    const product = e.target.parentElement.parentElement;
+    getProductInfo(product);
   }
-  products.addEventListener('click', buyProduct);
+}
+
+function loadEventListeners(){
   cart.addEventListener('click', removeProduct);
   // clearCartBtn.addEventListener('click', clearCart);
   
-  function buyProduct(e){
-    if(e.target.classList.contains('add-to-cart')){
-      const product = e.target.parentElement.parentElement;
-      getProductInfo(product);
-    }
-  }
 }
 
 function plus(e) {
