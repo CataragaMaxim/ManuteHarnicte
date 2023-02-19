@@ -281,6 +281,7 @@ h5 {
   flex-direction: column;
   border-radius: 20px;
   box-shadow: 0px 0px 20px gray;
+  cursor: pointer;
 }
 
 #product-page .product img {
@@ -295,14 +296,102 @@ h5 {
   font-size: 40px;
 }
 
+#product-page a {
+  margin-top: 40px;
+  color: black;
+  font-size: 30px;
+  text-decoration: underline;
+}
+
+#product-page a:hover {
+  color: gray;
+  text-decoration: underline;
+}
+
+.prod-bg {
+  z-index: 5;
+  top: 0;
+  background-color: rgba(0, 0, 0, 60%);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.remove-item {
+  z-index: 4;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.prod-item {
+  position: relative;
+  z-index: 5;
+  background-color: aliceblue;
+  border-radius: 20px;
+  width: 85%;
+  height: 80%;
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+.prod-item h4 {
+  margin: 45px 0;
+}
+
+.prod-item h5 {
+  justify-content: flex-start;
+  margin: 5px 0;
+}
+
+.remove-item-img {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  top: 4%;
+  right: 6%;
+}
+
+.remove-item-img img {
+  height: 40px;
+}
+
+.product-info {
+  width: 90%;
+  padding: 2%;
+  display: flex;
+}
+
+.product-info img {
+  width: 60%;
+  border-radius: 20px;
+}
+
+.base-info {
+  width: 50%;
+  padding: 0 2%;
+}
+
+#product-page .base-info p {
+  font-size: 20px;
+  justify-content: flex-start;
+}
+
 .buy-product {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.buy-product div {
-  width: 100%;
+.buy-product .calc-block {
+  background-color: white;
+  border-radius: 20px;
   margin: 10px 0;
   display: flex;
   justify-content: center;
@@ -310,26 +399,71 @@ h5 {
 }
 
 .plus, .minus {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  border: none;
+  border-radius: 20px;
   width: 30px;
-  padding: 0;
-  margin: 0 10px;
+  padding: 0 20px;
+  text-align: center;
   /* border-radius: 50%; */
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.plus:hover, .minus:hover {
+  background-color: lightgrey;
+}
+
+#product-page .amount, #product-page .base-info .amount, .amount {
+  color: black;
+  margin: 0 5px;
   font-size: 30px;
 }
 
-#product-page .amount {
-  color: black;
-  margin: 0;
-  font-size: 30px;
+.buy-product .total-price-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#product-page .total-price-block p {
+  font-size: 25px;
 }
 
 .add-to-cart {
+  background-color: white;
   width: 70%;
   padding: 10px 0;
   margin-bottom: 10px;
-  border-color: green;
+  border: 2px solid green;
+  border-radius: 20px;
   font-size: 25px;
+  cursor: pointer;
 }
+
+.add-to-cart:hover {
+  animation: 0.2s forwards hoverAddCart;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.gallery div {
+  background: center/120% no-repeat;
+  border-radius: 20px;
+  width: 30%;
+  height: 220px;
+  margin: 0 2% 10px 0; 
+}
+
+/* .image-block img {
+  width: 100%;
+} */
 
 #info-page {
   flex-direction: column;
@@ -413,8 +547,14 @@ h5 {
   #main-page {
     background: no-repeat center/150% url(../gallery/m5.jpg);
   }
+  .product-info img {
+    width: 50%;
+  }
   #product-page .product {
     width: 40%;
+  }
+  .gallery div {
+    background: center/160% no-repeat;
   }
   @media (min-height: 1000px) {
     #main-page {
@@ -485,6 +625,25 @@ h5 {
   }
   #product-page .product {
     width: 80%;
+  }
+  .product-info {
+    width: 95%;
+    flex-direction: column;
+  }
+  .product-info img {
+    width: 95%;
+  }
+  .base-info {
+    width: 100%;
+  }
+  .add-to-cart {
+    width: 90%;
+  }
+  .plus,.minus {
+    padding: 0 50px;
+  }
+  .gallery div {
+    width: 45%;
   }
   .contact-list, .contact-data, .contact-form {
     width: 100%;
@@ -567,5 +726,25 @@ h5 {
   }
   #product-page .product {
     margin: 5% 0;
+  }
+  .product-info {
+    padding: 2% 0 2% 2%;
+  }
+  .gallery div {
+    width: 90%;
+    margin: 5px 0;
+  }
+}
+
+@keyframes hoverAddCart {
+  from {
+    background-color: white;
+    border: 2px solid green;
+    color: black;
+  }
+  to {
+    background-color: green;
+    border: 2px solid transparent;
+    color: white;
   }
 }

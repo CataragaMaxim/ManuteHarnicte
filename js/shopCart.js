@@ -4,7 +4,7 @@ const cart = document.querySelector('.product-list');
 
 function buyProduct(e){
   if(e.target.classList.contains('add-to-cart')){
-    const product = e.target.parentElement.parentElement;
+    const product = e.target.parentElement.parentElement.parentElement;
     getProductInfo(product);
   }
 }
@@ -16,17 +16,21 @@ function loadEventListeners(){
 }
 
 function plus(e) {
+  let price = parseInt(document.querySelector('.total-price').alt);
   let amount = parseInt(e.target.previousElementSibling.innerHTML);
-  amount = amount + 1;
-  return e.target.previousElementSibling.innerHTML = amount;
+  amount += 1;
+  document.querySelector('.total-price').innerHTML = price * amount;
+  e.target.previousElementSibling.innerHTML = amount;
 }
 
 function minus(e) {
+  let price = parseInt(document.querySelector('.total-price').alt);
   let amount = parseInt(e.target.nextElementSibling.innerHTML);
   if (amount <= 1) {
     return e.target.nextElementSibling.innerHTML = 1;
   }
   amount = amount - 1;
+  document.querySelector('.total-price').innerHTML = price * amount;
   return e.target.nextElementSibling.innerHTML = amount;
 }
   
@@ -51,12 +55,12 @@ function addToCart(product){
   }
   prod.classList.add('cart-prod','cart-toggle')
   prod.innerHTML = `
-  <img src="${product.image}" class="prod-img">    
-  <div class="prod-info">
+  <img src="${product.image}" class="prod-img cart-toggle">    
+  <div class="prod-info cart-toggle">
     <h5>${product.name}</h5>
-    <div><p>${parseInt(product.price)*parseInt(product.amount)}</p><p>lei</p></div>
+    <div class="cart-toggle"><p>${parseInt(product.price)*parseInt(product.amount)}</p><p>lei</p></div>
   </div>
-  <div class="prod-calc">  
+  <div class="prod-calc cart-toggle">  
     <button class="minus">-</button>
     <p class="amount">${product.amount}</p>
     <button class="plus">+</button>

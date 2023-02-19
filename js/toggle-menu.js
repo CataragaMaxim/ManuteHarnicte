@@ -8,7 +8,7 @@ window.onclick = function(event) {
       phoneMenu.classList.remove('show');
     }
   }
-  if (!event.target.matches('.cart-toggle') && !event.target.parentNode.matches('.cart-toggle') && !event.target.parentNode.parentNode.matches('.cart-toggle')) {
+  if (!event.target.matches('.cart-toggle') && !event.target.parentNode.matches('.cart-toggle')) {
     if (shopCart.classList.contains('show')) {
       shopCart.classList.remove('show');
     }

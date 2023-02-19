@@ -1,4 +1,3 @@
-// const mainSlideGall = document.querySelector('#main-page img');
 const mainPageGall = document.querySelector('#main-page');
 console.dir(mainPageGall)
 
