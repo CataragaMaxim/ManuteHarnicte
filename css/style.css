@@ -626,8 +626,14 @@ h5 {
     margin: 0 5px;
   }
   .shop-cart {
+    display: none;
+    transform: none;
     background-color: rgba(223, 219, 219, 0.9);
     width: 100vw;
+  }
+  .show {
+    display: flex;
+    animation: none;
   }
   .remove {
     top: 10px;
