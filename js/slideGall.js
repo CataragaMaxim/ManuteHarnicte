@@ -1,5 +1,4 @@
 const mainPageGall = document.querySelector('#main-page');
-console.dir(mainPageGall)
 
 let i = 0;
 

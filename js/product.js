@@ -5,35 +5,54 @@ function removeBlock(){
   removeItem.parentElement.remove();
 }
 
+function plus(e) {
+  let price = parseInt(document.querySelector('.total-price').alt);
+  let amount = parseInt(e.target.previousElementSibling.innerHTML);
+  amount += 1;
+  document.querySelector('.total-price').innerHTML = price * amount;
+  e.target.previousElementSibling.innerHTML = amount;
+}
+
+function minus(e) {
+  let price = parseInt(document.querySelector('.total-price').alt);
+  let amount = parseInt(e.target.nextElementSibling.innerHTML);
+  if (amount <= 1) {
+    return e.target.nextElementSibling.innerHTML = 1;
+  }
+  amount = amount - 1;
+  document.querySelector('.total-price').innerHTML = price * amount;
+  return e.target.nextElementSibling.innerHTML = amount;
+}
+
 function addMore() {
   productPage.innerHTML = `
-  <div onclick="new Product('gallery/an0.jpg','Anul Nou','100','an',9)" class="product">
+  <div onclick="new Product('gallery/an0.jpg','Anul Nou','50','an',10)" class="product">
     <img src="gallery/an0.jpg" alt="">
-    <p>100 Lei</p>
+    <p>50 lei</p>
   </div>
-  <div onclick="new Product('gallery/b5.jpg','Bentile','1000','b',24)" class="product">
+  <div onclick="new Product('gallery/b5.jpg','Bentile','20','b',25)" class="product">
     <img src="gallery/b5.jpg" alt="">
-    <p>1000 Lei</p>
+    <p>20 lei</p>
   </div>
-  <div onclick="new Product('gallery/c11.jpg','Cutiute','100000','c',11)" class="product">
+  <div onclick="new Product('gallery/c11.jpg','Cutiute','60','c',12)" class="product">
     <img src="gallery/c11.jpg" alt="">
-    <p>100000 Lei</p>
+    <p>60 lei</p>
   </div>
-  <div onclick="new Product('gallery/e6.jpg','Ecusoane','300','e',12)" class="product">
+  <div onclick="new Product('gallery/e6.jpg','Ecusoane','30','e',13)" class="product">
     <img src="gallery/e6.jpg" alt="">
-    <p>300 Lei</p>
+    <p>30 lei</p>
   </div>
-  <div onclick="new Product('gallery/m4.jpg','Mărțișoare','30','m',18)" class="product">
+  <div onclick="new Product('gallery/m4.jpg','Mărțișoare','10','m',19)" class="product">
     <img src="gallery/m4.jpg" alt="">
-    <p>30 Lei</p>
+    <p>10 lei</p>
   </div>
-  <div onclick="new Product('gallery/p4.jpg','Primăvara','300','p',11)" class="product">
+  <div onclick="new Product('gallery/p4.jpg','Primăvara','40','p',12)" class="product">
     <img src="gallery/p4.jpg" alt="">
-    <p>300 Lei</p>
+    <p>40 lei</p>
   </div>
-  <div onclick="new Product('gallery/t3.jpg','Toamna de aur','200','t',2)" class="product">
+  <div onclick="new Product('gallery/t3.jpg','Toamna de aur','100','t',3)" class="product">
     <img src="gallery/t3.jpg" alt="">
-    <p>200 Lei</p>
+    <p>100 lei</p>
   </div>
   `;
 }

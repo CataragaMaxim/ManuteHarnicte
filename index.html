@@ -5,6 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
   <script type="text/javascript"src="js/slideGall.js" defer></script>
   <script type="text/javascript" src="js/menu.js" defer></script>
   <script type="text/javascript" src="js/shopCart.js" defer></script>
@@ -30,11 +33,12 @@
       </div>
       <a onclick="toggleShow(shopCart)" class="cart cart-toggle">
         <img class="cart-toggle" src="img/cart.png" alt="">
+        <p class="total-prod-amount">0</p>
       </a>
         <div class="shop-cart cart-toggle">
-          <div></div>
+          <div class="close"><img src="img/remove.png" onclick="toggleShow(shopCart)"></div>
           <div class="product-list"></div>
-          <div></div>
+          <div class="cart-price cart-toggle"><p>Suma Totală:&nbsp;</p><p class="cart-total-price">0</p><p>&nbsp;lei</p></div>
         </div>
       <div class="phone-btn toggle" onclick="toggleShow(phoneMenu)"><img class="toggle" src="img/menu.png" alt=""></div>
         <div class="phone-menu">
@@ -78,21 +82,21 @@
     </div>
     <h4 class="prod">Magazin</h4>
     <div id="product-page">
-      <div onclick="new Product('gallery/an0.jpg','Anul Nou','100','an',9)" class="product">
+      <div onclick="new Product('gallery/an0.jpg','Anul Nou','50','an',10)" class="product">
         <img src="gallery/an0.jpg" alt="">
-        <p>100 Lei</p>
+        <p>50 lei</p>
       </div>
-      <div onclick="new Product('gallery/b5.jpg','Bentile','1000','b',24)" class="product">
+      <div onclick="new Product('gallery/b5.jpg','Bentile','20','b',25)" class="product">
         <img src="gallery/b5.jpg" alt="">
-        <p>1000 Lei</p>
+        <p>20 lei</p>
       </div>
-      <div onclick="new Product('gallery/c11.jpg','Cutiute','100000','c',11)" class="product">
+      <div onclick="new Product('gallery/c11.jpg','Cutiute','60','c',12)" class="product">
         <img src="gallery/c11.jpg" alt="">
-        <p>100000 Lei</p>
+        <p>60 lei</p>
       </div>
-      <div onclick="new Product('gallery/e6.jpg','Ecusoane','300','e',12)" class="product">
+      <div onclick="new Product('gallery/e6.jpg','Ecusoane','30','e',13)" class="product">
         <img src="gallery/e6.jpg" alt="">
-        <p>300 Lei</p>
+        <p>30 lei</p>
       </div>
       <a onclick="addMore()">--Alte 3 Categorii--</a>
     </div>

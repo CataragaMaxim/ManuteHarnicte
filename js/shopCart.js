@@ -1,37 +1,41 @@
 const cart = document.querySelector('.product-list');
+const cartTotalPrice = document.querySelector('.cart-total-price');
+const cartTotalAmount = document.querySelector('.total-prod-amount');
 // const clearCartBtn = document.querySelector('.clear-cart');
 // const empty = document.querySelector('.empty');
 
-function buyProduct(e){
+function totalPriceCalc() {
+  let totalPrice = 0;
+  for (let i = 0; i < cart.children.length; i++) {
+    totalPrice += parseInt(cart.children[i].children[1].children[1].children[0].innerHTML);
+  }
+  cartTotalPrice.innerHTML = totalPrice;
+}
+
+function totalAmountCalc() {
+  let totalAmount = 0;
+  let cartAmounts = document.querySelectorAll('.cart-amount');
+  for (let i = 0; i < cartAmounts.length; i++) {
+    totalAmount += parseInt(cartAmounts[i].textContent);
+  }
+  if (totalAmount > 99) {
+    cartTotalAmount.textContent = '99+';
+  } else {
+    cartTotalAmount.textContent = totalAmount;
+  }
+}
+
+function buyProduct(e) {
   if(e.target.classList.contains('add-to-cart')){
     const product = e.target.parentElement.parentElement.parentElement;
     getProductInfo(product);
   }
 }
 
-function loadEventListeners(){
+function loadEventListeners() {
   cart.addEventListener('click', removeProduct);
   // clearCartBtn.addEventListener('click', clearCart);
   
-}
-
-function plus(e) {
-  let price = parseInt(document.querySelector('.total-price').alt);
-  let amount = parseInt(e.target.previousElementSibling.innerHTML);
-  amount += 1;
-  document.querySelector('.total-price').innerHTML = price * amount;
-  e.target.previousElementSibling.innerHTML = amount;
-}
-
-function minus(e) {
-  let price = parseInt(document.querySelector('.total-price').alt);
-  let amount = parseInt(e.target.nextElementSibling.innerHTML);
-  if (amount <= 1) {
-    return e.target.nextElementSibling.innerHTML = 1;
-  }
-  amount = amount - 1;
-  document.querySelector('.total-price').innerHTML = price * amount;
-  return e.target.nextElementSibling.innerHTML = amount;
 }
   
 function getProductInfo(product) {
@@ -44,12 +48,14 @@ function getProductInfo(product) {
   addToCart(productInfo);
 }
 
-function addToCart(product){
+function addToCart(product) {
   const prod = document.createElement('div');
   for (let i = 0; i < cart.childNodes.length; i++) {
     if (cart.childNodes[i].children[1].children[0].textContent == product.name) {
       cart.childNodes[i].children[2].children[1].textContent = parseInt(cart.childNodes[i].children[2].children[1].textContent) + parseInt(product.amount);
       cart.childNodes[i].children[1].children[1].children[0].textContent = parseInt(product.price)*parseInt(cart.childNodes[i].children[2].children[1].textContent);
+      totalAmountCalc()
+      totalPriceCalc();
       return;
     }
   }
@@ -61,9 +67,9 @@ function addToCart(product){
     <div class="cart-toggle"><p>${parseInt(product.price)*parseInt(product.amount)}</p><p>lei</p></div>
   </div>
   <div class="prod-calc cart-toggle">  
-    <button class="minus">-</button>
-    <p class="amount">${product.amount}</p>
-    <button class="plus">+</button>
+    <button class="cart-minus">-</button>
+    <p class="cart-amount">${product.amount}</p>
+    <button class="cart-plus">+</button>
   </div>
   <img src="img/remove.png" class="remove">
   `;
@@ -77,6 +83,8 @@ function addToCart(product){
       plusCartEl.addEventListener('click', plusCart);
     }
   };
+  totalAmountCalc()
+  totalPriceCalc();
 }
 
 function plusCart(e) {
@@ -85,6 +93,8 @@ function plusCart(e) {
   amount = amount + 1;
   e.target.previousElementSibling.innerHTML = amount;
   e.target.parentElement.parentElement.children[1].children[1].children[0].textContent = price * amount;
+  totalAmountCalc()
+  totalPriceCalc();
 }
 
 function minusCart(e) {
@@ -93,24 +103,30 @@ function minusCart(e) {
   if (amount <= 1) {
     amount = 1;
     e.target.nextElementSibling.innerHTML = amount;
-    return e.target.parentElement.parentElement.children[1].children[1].children[0].textContent = price * amount;
+    e.target.parentElement.parentElement.children[1].children[1].children[0].textContent = price * amount;
+    totalAmountCalc()
+    return totalPriceCalc();
   }
   amount = amount - 1;
   e.target.nextElementSibling.innerHTML = amount;
-  return e.target.parentElement.parentElement.children[1].children[1].children[0].textContent = price * amount;
+  e.target.parentElement.parentElement.children[1].children[1].children[0].textContent = price * amount;
+  totalAmountCalc()
+  return totalPriceCalc();
 }
 
-function removeProduct(e){
+function removeProduct(e) {
   if(e.target.classList.contains('remove')){
     e.target.parentElement.remove();
   }
+  totalAmountCalc()
+  totalPriceCalc();
 }
 
-function clearCart(){
-  console.log(cartProducts.firstChild)
-  while(cartProducts.firstChild){
-      cart.removeChild(cartProducts.firstChild);
-  }
-}
+// function clearCart() {
+//   console.log(cartProducts.firstChild)
+//   while(cartProducts.firstChild){
+//       cart.removeChild(cartProducts.firstChild);
+//   }
+// }
 
 loadEventListeners();
