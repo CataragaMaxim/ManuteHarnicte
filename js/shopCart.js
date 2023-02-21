@@ -1,8 +1,8 @@
+const body = document.querySelector('body');
 const cart = document.querySelector('.product-list');
 const cartTotalPrice = document.querySelector('.cart-total-price');
 const cartTotalAmount = document.querySelector('.total-prod-amount');
-// const clearCartBtn = document.querySelector('.clear-cart');
-// const empty = document.querySelector('.empty');
+const clearCartBtn = document.querySelector('.clear-cart');
 
 function totalPriceCalc() {
   let totalPrice = 0;
@@ -34,8 +34,7 @@ function buyProduct(e) {
 
 function loadEventListeners() {
   cart.addEventListener('click', removeProduct);
-  // clearCartBtn.addEventListener('click', clearCart);
-  
+  clearCartBtn.addEventListener('click', clearCart);
 }
   
 function getProductInfo(product) {
@@ -71,7 +70,7 @@ function addToCart(product) {
     <p class="cart-amount">${product.amount}</p>
     <button class="cart-plus">+</button>
   </div>
-  <img src="img/remove.png" class="remove">
+  <img src="img/delete.png" class="remove">
   `;
   cart.appendChild(prod);
   prod.children[1].children[1].alt = parseInt(product.price);
@@ -122,11 +121,33 @@ function removeProduct(e) {
   totalPriceCalc();
 }
 
-// function clearCart() {
-//   console.log(cartProducts.firstChild)
-//   while(cartProducts.firstChild){
-//       cart.removeChild(cartProducts.firstChild);
-//   }
-// }
+function removeComandBlock(){
+  let removeItem = document.querySelector('.remove-comand-block');
+  removeItem.parentElement.remove();
+}
+
+function clearCart() {
+  while(cart.firstChild){
+      cart.removeChild(cart.firstChild);
+  }
+  totalAmountCalc()
+  totalPriceCalc();
+}
+
+class ComandProd {
+  constructor() {
+    const infoBlock = document.createElement('div');
+    infoBlock.classList.add('comand-bg');
+    infoBlock.innerHTML = `
+    <div onclick="removeComandBlock()" class="remove-comand-block"></div>
+    <div class="comand-block">
+      <img onclick="removeComandBlock()" class="remove-comand-img" src="img/remove.png">
+      <h4>Comandă</h4>
+      <p>Pentru a comanda apelați la numărul <a>+373 79 123 456</a>.</p>
+    </div>
+    `
+    body.appendChild(infoBlock);
+  }
+}
 
 loadEventListeners();

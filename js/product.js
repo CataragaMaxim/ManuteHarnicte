@@ -5,6 +5,11 @@ function removeBlock(){
   removeItem.parentElement.remove();
 }
 
+function removeFullImg(){
+  let removeItem = document.querySelector('.remove-full-img-item');
+  removeItem.parentElement.remove();
+}
+
 function plus(e) {
   let price = parseInt(document.querySelector('.total-price').alt);
   let amount = parseInt(e.target.previousElementSibling.innerHTML);
@@ -24,17 +29,51 @@ function minus(e) {
   return e.target.nextElementSibling.innerHTML = amount;
 }
 
+function prevImg() {
+  let arr = document.querySelectorAll('.gallery div');
+  let fullImage = document.querySelector('.full-img');
+  let orderNum = parseInt(fullImage.alt);
+  let arrSrc = [];
+  for (let i = 0; i < arr.length; i++) {
+    arrSrc.push(arr[i].alt);
+  }
+  if (orderNum == 0) {
+    orderNum = parseInt(arrSrc.length) - 1;
+    fullImage.src = arrSrc[orderNum];
+    return fullImage.alt = orderNum;    
+  }
+  fullImage.src = arrSrc[--orderNum];
+  fullImage.alt = orderNum;
+}
+
+function nextImg() {
+  let arr = document.querySelectorAll('.gallery div');
+  let fullImage = document.querySelector('.full-img');
+  let orderNum = parseInt(fullImage.alt);
+  let arrSrc = [];
+  for (let i = 0; i < arr.length; i++) {
+    arrSrc.push(arr[i].alt);
+  }
+  if (orderNum >= arrSrc.length - 1) {
+    orderNum = 0;
+    fullImage.src = arrSrc[orderNum];
+    return fullImage.alt = orderNum;    
+  }
+  fullImage.src = arrSrc[++orderNum];
+  fullImage.alt = orderNum;
+}
+
 function addMore() {
   productPage.innerHTML = `
   <div onclick="new Product('gallery/an0.jpg','Anul Nou','50','an',10)" class="product">
     <img src="gallery/an0.jpg" alt="">
     <p>50 lei</p>
   </div>
-  <div onclick="new Product('gallery/b5.jpg','Bentile','20','b',25)" class="product">
+  <div onclick="new Product('gallery/b5.jpg','Bentițe','20','b',25)" class="product">
     <img src="gallery/b5.jpg" alt="">
     <p>20 lei</p>
   </div>
-  <div onclick="new Product('gallery/c11.jpg','Cutiute','60','c',12)" class="product">
+  <div onclick="new Product('gallery/c11.jpg','Cutiuțe','60','c',12)" class="product">
     <img src="gallery/c11.jpg" alt="">
     <p>60 lei</p>
   </div>
@@ -55,6 +94,35 @@ function addMore() {
     <p>100 lei</p>
   </div>
   `;
+}
+
+class Gall {
+  constructor() {
+    let arr = document.querySelectorAll('.gallery div');
+    let orderNum = 0;
+    let arrSrc = [];
+    for (let i = 0; i < arr.length; i++) {
+      arrSrc.push(arr[i].alt);
+    }
+    const fullImg = document.createElement('div');
+    fullImg.classList.add('full-img-bg');
+    fullImg.innerHTML = `
+    <div onclick="removeFullImg()" class="remove-full-img-item"></div>
+    <div class="full-img-block">
+      <img onclick="removeFullImg()" class="remove-full-img" src="img/remove.png">
+      <div class="go-prev" onclick="prevImg()"><img src="img/arrow.png"></div>
+      <div class="go-next" onclick="nextImg()"><img style="transform: rotate(180deg);" src="img/arrow.png"></div>
+      <img class="full-img" src="${arrSrc[orderNum]}">
+    </div>
+    `
+    productPage.appendChild(fullImg);
+    let fullImage = document.querySelector('.full-img');
+    fullImage.alt = orderNum;
+  }
+}
+
+function newGallery() {
+  new Gall;
 }
 
 class Product {
@@ -100,6 +168,9 @@ class Product {
       for (let i = 0; i < gallEnd; i++) {
         let imageBlock = document.createElement('div');
         imageBlock.style.backgroundImage = `url('gallery/${gallId + i}.jpg')`;
+        imageBlock.alt = `gallery/${gallId + i}.jpg`;
+        imageBlock.number = i;
+        imageBlock.addEventListener('click', newGallery);
         gall.appendChild(imageBlock);
       }
     }
