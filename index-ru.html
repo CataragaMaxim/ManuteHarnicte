@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript"src="js/slideGall.js" defer></script>
+  <script type="text/javascript" src="js/menu.js" defer></script>
+  <script type="text/javascript" src="js/shopCart.js" defer></script>
+  <script type="text/javascript" src="js/product.js" defer></script>  
+  <script type="text/javascript" src="js/toggle-menu.js"></script>
+  <title>Mânuțe Hărnicuțe</title>
+</head>
+<body>
+  <!-- Top Header -->
+  <header id="main-header">
+      <a href="index.html" class="logo"><img src="img/logo.png" alt=""></a>
+      <div class="nav-menu-ru">
+        <a onclick="moveWindow(0)">Главная</a>
+        <a onclick="moveWindow(prodPage.offsetTop - 46)" class="sub-menu">Магазин</a>
+          <!-- <div class="prod-categ">
+            <a href="">Anul Nou</a>
+            <a href="">Papusi</a>
+            <a href="">Iepuri</a>
+            <a href="">Flori</a>
+          </div> -->
+        <a onclick="moveWindow(infoPage.offsetTop - 46)">Информация</a>
+        <a onclick="moveWindow(contactPage.offsetTop - 46)">Контакты</a>
+      </div>
+      <a onclick="toggleShow(shopCart)" class="cart cart-toggle">
+        <img class="cart-toggle" src="img/cart.png" alt="">
+        <p class="total-prod-amount">0</p>
+      </a>
+        <div class="shop-cart cart-toggle">
+          <div class="close"><button class="clear-cart">Очистить</button><img src="img/remove.png" onclick="toggleShow(shopCart)"></div>
+          <div class="product-list"></div>
+          <div class="cart-price cart-toggle"><p>Сума заказа:&nbsp;</p><p class="cart-total-price">0</p><p>&nbsp;lei</p><button onclick="new ComandProdRu(), toggleShow(shopCart) " class="comand-prods">Заказать</button></div>
+        </div>
+      <div class="phone-btn toggle" onclick="toggleShow(phoneMenu)"><img class="toggle" src="img/menu.png" alt=""></div>
+        <div class="phone-menu">
+          <a onclick="moveWindow(0)">Главная</a>
+          <a onclick="moveWindow(prodPage.offsetTop - 46)">Магазин</a>
+          <a onclick="moveWindow(infoPage.offsetTop - 46)">Информация</a>
+          <a onclick="moveWindow(contactPage.offsetTop - 46)">Контакты</a>
+          <div class="languages">
+            <a href="index.html">Ro</a>
+            <a href="index-ru.html" class="cur-page">Ru</a>
+            <a href="index-en.html">En</a>
+          </div>
+        </div>
+      <div class="languages">
+        <a href="index.html">Ro</a>
+        <a href="index-ru.html" class="cur-page">Ru</a>
+        <a href="index-en.html">En</a>
+      </div>
+  </header>
+  <!-- Top Header End -->
+
+  <!-- Side Navigation Bar -->
+  <!-- <div id="side-nav-bar">
+    <div>
+      <img src="img/logo.png" alt="Mânuțe Hărnicuțe">
+      <div id="lang"></div>
+    </div>
+    <div><img onclick="moveWindow(0)" src="img/home.png" alt="Home"></div>
+    <div><img onclick="moveWindow(prodPage.offsetTop)" src="img/shop.png" alt="Magazin"></div>
+    <div><img onclick="moveWindow(infoPage.offsetTop)" src="img/info.png" alt="Informații"></div>
+    <div><img onclick="moveWindow(contactPage.offsetTop)" src="img/contact.png" alt="Contacte"></div>
+  </div> -->
+  <!-- Side Navigation Bar End -->
+
+  <div id="page-content">
+    <div id="main-page">
+      <div>
+        <img src="img/title.png" alt="">
+      </div>
+      <!-- <img src="gallery/m5.jpg" alt="0"> -->
+    </div>
+    <h4 class="prod">Магазин</h4>
+    <div id="product-page">
+      <div onclick="new ProductRu('gallery/an0.jpg','Anul Nou','50','an',10)" class="product">
+        <img src="gallery/an0.jpg" alt="">
+        <p>50 lei</p>
+      </div>
+      <div onclick="new ProductRu('gallery/b5.jpg','Bentițe','20','b',25)" class="product">
+        <img src="gallery/b5.jpg" alt="">
+        <p>20 lei</p>
+      </div>
+      <div onclick="new ProductRu('gallery/c11.jpg','Cutiuțe','60','c',12)" class="product">
+        <img src="gallery/c11.jpg" alt="">
+        <p>60 lei</p>
+      </div>
+      <div onclick="new ProductRu('gallery/e6.jpg','Ecusoane','30','e',13)" class="product">
+        <img src="gallery/e6.jpg" alt="">
+        <p>30 lei</p>
+      </div>
+      <a onclick="addMoreRu()">--Другие продукты--</a>
+    </div>
+    <h4 class="info">Информация</h4>
+    <div id="info-page">
+      <!-- Slide-Gallery -->
+      <div>
+        <img src="asets/ofice2.jpg" alt="">
+      </div>
+      <p>&nbsp;Преимущество наших изделий ручной работы в том, что они уникальны, они сделаны дизайнером Татьяной Маху с большой тщательностью и основаны на собственной концепции, и это преимущество заслуживает того, чтобы использовать его по максимуму.
+        <br><br>&nbsp;Наши продукты имеют свою историю, тему, ценность. Поэтому, приобретая тематический товар, вы поймете, что приобрели гораздо больше, чем простой подарок или внимание коллеге или близкому человеку, вы приобретете историю и опыт.
+        <br><br>&nbsp;Работы ценятся за безупречное исполнение, историю продуктов, душу и страсть, вложенные в их создание.
+      </p>
+    </div>
+    <h4 class="contact">Контакты</h4>
+    <div id="contact-page">
+      <ul class="contact-list">
+        <li>- Собственная концепция;</li>
+        <li>- Уникальные продукты;</li>
+        <li>- Безупречное исполнение;</li>
+        <li>- Собственная история;</li>
+      </ul>
+      <ul class="contact-data">
+        <li><img src="img/place.png" alt="">&nbsp;<b>Адрес:</b>Igor Vieru Street 6/1</li>
+        <li><img src="img/email.png" alt="">&nbsp;<b>Email:</b>gutu.ludmila@chisinau.edu.md</li>
+      </ul>
+      <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10874.234543212857!2d28.876831189117915!3d47.0488909371764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c97ced1ac756eb%3A0x8c680f06a6abc918!2zSGlnaCBTY2hvb2wgQ29uc3RhbnRpbiBOZWdydXp6aSwgU3RyYWRhIElnb3IgVmllcnUgNi8yLCBDaGnImWluxIN1LCDQnNC-0LvQtNCw0LLQuNGP!5e0!3m2!1sru!2s!4v1626732746856!5m2!1sru!2s" allowfullscreen="" loading="lazy"></iframe>
+      <form class="contact-form">
+          <h3 class="centered">Оставьте сообщение</h3>
+          <input type="text" placeholder="Имя или Фамилия" required/>
+          <input type="email" placeholder="Email" required/>
+          <textarea rows="3" placeholder="Сообщение" required></textarea>
+          <input type="submit" value="Отправить">
+      </form>
+    </div>
+  </div>
+</body>
+</html>

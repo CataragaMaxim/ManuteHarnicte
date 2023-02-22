@@ -143,7 +143,39 @@ class ComandProd {
     <div class="comand-block">
       <img onclick="removeComandBlock()" class="remove-comand-img" src="img/remove.png">
       <h4>Comandă</h4>
-      <p>Pentru a comanda apelați la numărul <a>+373 79 123 456</a>.</p>
+      <p>Pentru a comanda apelați la numărul <a href="tel:+37379618618">+373 79 618 618</a>.</p>
+    </div>
+    `
+    body.appendChild(infoBlock);
+  }
+}
+
+class ComandProdEn {
+  constructor() {
+    const infoBlock = document.createElement('div');
+    infoBlock.classList.add('comand-bg');
+    infoBlock.innerHTML = `
+    <div onclick="removeComandBlock()" class="remove-comand-block"></div>
+    <div class="comand-block">
+      <img onclick="removeComandBlock()" class="remove-comand-img" src="img/remove.png">
+      <h4>Order</h4>
+      <p>To order call the number <a href="tel:+37379618618">+373 79 618 618</a>.</p>
+    </div>
+    `
+    body.appendChild(infoBlock);
+  }
+}
+
+class ComandProdRu {
+  constructor() {
+    const infoBlock = document.createElement('div');
+    infoBlock.classList.add('comand-bg');
+    infoBlock.innerHTML = `
+    <div onclick="removeComandBlock()" class="remove-comand-block"></div>
+    <div class="comand-block">
+      <img onclick="removeComandBlock()" class="remove-comand-img" src="img/remove.png">
+      <h4>Заказать</h4>
+      <p>Для заказа звоните по номеру <a href="tel:+37379618618">+373 79 618 618</a>.</p>
     </div>
     `
     body.appendChild(infoBlock);
