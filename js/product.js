@@ -65,66 +65,66 @@ function nextImg() {
 
 function addMore() {
   productPage.innerHTML = `
-  <div onclick="new Product('gallery/an0.jpg','Anul Nou','50','an',10)" class="product">
-    <img src="gallery/an0.jpg" alt="">
-    <p>50 lei</p>
+  <div onclick="new Product('gallery/an1.jpg','Anul Nou','150','an',10)" class="product">
+    <img src="gallery/an1.jpg" alt="">
+    <p>150 lei</p>
   </div>
-  <div onclick="new Product('gallery/b5.jpg','Bentițe','20','b',25)" class="product">
+  <div onclick="new Product('gallery/b5.jpg','Bentițe','45','b',25)" class="product">
     <img src="gallery/b5.jpg" alt="">
-    <p>20 lei</p>
+    <p>45 lei</p>
   </div>
-  <div onclick="new Product('gallery/c11.jpg','Cutiuțe','60','c',12)" class="product">
+  <div onclick="new Product('gallery/c11.jpg','Cutiuțe','250','c',12)" class="product">
     <img src="gallery/c11.jpg" alt="">
-    <p>60 lei</p>
+    <p>250 lei</p>
   </div>
-  <div onclick="new Product('gallery/e6.jpg','Ecusoane','30','e',13)" class="product">
-    <img src="gallery/e6.jpg" alt="">
-    <p>30 lei</p>
+  <div onclick="new Product('gallery/e4.jpg','Ecusoane','35','e',13)" class="product">
+    <img src="gallery/e4.jpg" alt="">
+    <p>35 lei</p>
   </div>
-  <div onclick="new Product('gallery/m4.jpg','Mărțișoare','10','m',19)" class="product">
+  <div onclick="new Product('gallery/m4.jpg','Mărțișoare','150','m',19)" class="product">
     <img src="gallery/m4.jpg" alt="">
-    <p>10 lei</p>
+    <p>150 lei</p>
   </div>
-  <div onclick="new Product('gallery/p4.jpg','Primăvara','40','p',12)" class="product">
+  <div onclick="new Product('gallery/p4.jpg','Primăvara','200','p',14)" class="product">
     <img src="gallery/p4.jpg" alt="">
-    <p>40 lei</p>
+    <p>200 lei</p>
   </div>
-  <div onclick="new Product('gallery/t3.jpg','Toamna de aur','100','t',3)" class="product">
+  <div onclick="new Product('gallery/t3.jpg','Toamna de aur','180','t',3)" class="product">
     <img src="gallery/t3.jpg" alt="">
-    <p>100 lei</p>
+    <p>180 lei</p>
   </div>
   `;
 }
 
 function addMoreRu() {
   productPage.innerHTML = `
-  <div onclick="new ProductRu('gallery/an0.jpg','Anul Nou','50','an',10)" class="product">
-    <img src="gallery/an0.jpg" alt="">
-    <p>50 lei</p>
+  <div onclick="new ProductRu('gallery/an1.jpg','Anul Nou','150','an',10)" class="product">
+    <img src="gallery/an1.jpg" alt="">
+    <p>150 lei</p>
   </div>
-  <div onclick="new ProductRu('gallery/b5.jpg','Bentițe','20','b',25)" class="product">
+  <div onclick="new ProductRu('gallery/b5.jpg','Bentițe','45','b',25)" class="product">
     <img src="gallery/b5.jpg" alt="">
-    <p>20 lei</p>
+    <p>45 lei</p>
   </div>
-  <div onclick="new ProductRu('gallery/c11.jpg','Cutiuțe','60','c',12)" class="product">
+  <div onclick="new ProductRu('gallery/c11.jpg','Cutiuțe','250','c',12)" class="product">
     <img src="gallery/c11.jpg" alt="">
-    <p>60 lei</p>
+    <p>250 lei</p>
   </div>
-  <div onclick="new ProductRu('gallery/e6.jpg','Ecusoane','30','e',13)" class="product">
-    <img src="gallery/e6.jpg" alt="">
-    <p>30 lei</p>
+  <div onclick="new ProductRu('gallery/e4.jpg','Ecusoane','35','e',13)" class="product">
+    <img src="gallery/e4.jpg" alt="">
+    <p>35 lei</p>
   </div>
-  <div onclick="new ProductRu('gallery/m4.jpg','Mărțișoare','10','m',19)" class="product">
+  <div onclick="new ProductRu('gallery/m4.jpg','Mărțișoare','150','m',19)" class="product">
     <img src="gallery/m4.jpg" alt="">
-    <p>10 lei</p>
+    <p>150 lei</p>
   </div>
-  <div onclick="new ProductRu('gallery/p4.jpg','Primăvara','40','p',12)" class="product">
+  <div onclick="new ProductRu('gallery/p4.jpg','Primăvara','200','p',14)" class="product">
     <img src="gallery/p4.jpg" alt="">
-    <p>40 lei</p>
+    <p>200 lei</p>
   </div>
-  <div onclick="new ProductRu('gallery/t3.jpg','Toamna de aur','100','t',3)" class="product">
+  <div onclick="new ProductRu('gallery/t3.jpg','Toamna de aur','180','t',3)" class="product">
     <img src="gallery/t3.jpg" alt="">
-    <p>100 lei</p>
+    <p>180 lei</p>
   </div>
   `;
 }

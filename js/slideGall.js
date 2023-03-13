@@ -2,7 +2,7 @@ const mainPageGall = document.querySelector('#main-page');
 
 let i = 0;
 
-const slideGallImages = ["url('gallery/m5.jpg')", "url('gallery/an1.jpg')", "url('gallery/p11.jpg')"];
+const slideGallImages = ["url('gallery/an1.jpg')", "url('gallery/p12.jpg')", "url('gallery/p13.jpg')"];
 
 function repeatChange() {
     if (i < slideGallImages.length - 1) {
