@@ -82,23 +82,27 @@
     </div>
     <h4 class="prod">Shop</h4>
     <div id="product-page">
-      <div onclick="new Product('gallery/an1.jpg','Anul Nou','150','an',10)" class="product">
+      <div onclick="new Product('gallery/an1.jpg','New Year','150','an',10)" class="product">
         <img src="gallery/an1.jpg" alt="">
+        <h4 class="prod-title">Fairy New Year</h4>
         <p>150 lei</p>
       </div>
-      <div onclick="new Product('gallery/b5.jpg','Bentițe','45','b',25)" class="product">
+      <div onclick="new Product('gallery/b5.jpg','Headbands','45','b',25)" class="product">
         <img src="gallery/b5.jpg" alt="">
+        <h4 class="prod-title">Headbands for princesses</h4>
         <p>45 lei</p>
       </div>
-      <div onclick="new Product('gallery/c11.jpg','Cutiuțe','250','c',12)" class="product">
+      <div onclick="new Product('gallery/c11.jpg','Boxes','250','c',12)" class="product">
         <img src="gallery/c11.jpg" alt="">
+        <h4 class="prod-title">Magical boxes</h4>
         <p>250 lei</p>
       </div>
-      <div onclick="new Product('gallery/e4.jpg','Ecusoane','35','e',13)" class="product">
+      <div onclick="new Product('gallery/e4.jpg','Badges','35','e',13)" class="product">
         <img src="gallery/e4.jpg" alt="">
+        <h4 class="prod-title">Badges</h4>
         <p>35 lei</p>
       </div>
-      <a onclick="addMore()">--Other Products--</a>
+      <a onclick="addMoreEn()">-- Other Products --</a>
     </div>
     <h4 class="info">Information</h4>
     <div id="info-page">
@@ -120,9 +124,11 @@
         <li>- Our own story;</li>
       </ul>
       <ul class="contact-data">
-        <li><img src="img/place.png" alt="">&nbsp;<b>Address:&nbsp;/b>or. Ungheni, str. Tudor Arghezii 5</li>
+        <li><img src="img/place.png" alt="">&nbsp;<b>Address:&nbsp;</b>or. Ungheni, str. Tudor Arghezii 5</li>
         <li><img src="img/email.png" alt="">&nbsp;<b>Email:&nbsp;</b><a href="mailto:tanya_magu@mail.ru">tanya_magu@mail.ru</a></li>
-        <li><img src="" alt="">&nbsp;<b>Tel:&nbsp;</b><a href="tel:+37360905200">+373 60 905 200</a></li>
+        <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+        </svg>&nbsp;<b>Tel:&nbsp;</b><a href="tel:+37360905200">+373 60 905 200</a></li>
       </ul>
       <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d43366.05531163505!2d27.75857844803683!3d47.20917671490372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40cb0046bfd84557%3A0xe00e3fbbb82475b7!2sUngheni%2C%20Moldova!5e0!3m2!1sro!2s!4v1678698907794!5m2!1sro!2s" allowfullscreen="" loading="lazy"></iframe>
       <form class="contact-form">
@@ -132,6 +138,11 @@
           <textarea rows="3" placeholder="Message" required></textarea>
           <input type="submit" value="Send">
       </form>
+    </div>
+    <div class="disclaimer">
+      <p>This website was created as part of the
+         "Tekwill Junior Ambassadors" competition organized by the "Tekwill in Every
+          School" project and does not necessarily reflect the opinion of the project.</p>
     </div>
   </div>
 </body>

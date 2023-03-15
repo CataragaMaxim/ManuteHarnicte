@@ -356,7 +356,7 @@ h5 {
 
 #main-page {
   display: flex;
-  background: no-repeat center/110% url(../gallery/m5.jpg);
+  background: no-repeat center/100% url(../gallery/m4.jpg);
 }
 
 #main-page div {
@@ -405,6 +405,11 @@ h5 {
 
 #product-page .product img {
   border-radius: 20px;
+}
+
+#product-page .prod-title {
+  font-size: 16px;
+  margin: 5px 0 0 0;
 }
 
 #product-page p {
@@ -719,6 +724,17 @@ h5 {
   padding: 10px 6px;
   margin: 10px 0;
   font-size: 25px;
+}
+
+.disclaimer {
+  display: flex;
+  background-color: lightgray;
+  padding: 10px 5px;
+}
+
+.disclaimer p {
+  font-size: 10px;
+  margin: 0;
 }
 
 @media (max-height: 550px) {

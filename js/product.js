@@ -67,30 +67,37 @@ function addMore() {
   productPage.innerHTML = `
   <div onclick="new Product('gallery/an1.jpg','Anul Nou','150','an',10)" class="product">
     <img src="gallery/an1.jpg" alt="">
+    <h4 class="prod-title">Anul Nou Magic</h4>
     <p>150 lei</p>
   </div>
   <div onclick="new Product('gallery/b5.jpg','Bentițe','45','b',25)" class="product">
     <img src="gallery/b5.jpg" alt="">
+    <h4 class="prod-title">Bentițe pentru garofițe</h4>
     <p>45 lei</p>
   </div>
   <div onclick="new Product('gallery/c11.jpg','Cutiuțe','250','c',12)" class="product">
     <img src="gallery/c11.jpg" alt="">
+    <h4 class="prod-title">Cutiuțe magice</h4>
     <p>250 lei</p>
   </div>
   <div onclick="new Product('gallery/e4.jpg','Ecusoane','35','e',13)" class="product">
     <img src="gallery/e4.jpg" alt="">
+    <h4 class="prod-title">Ecusoane</h4>
     <p>35 lei</p>
   </div>
   <div onclick="new Product('gallery/m4.jpg','Mărțișoare','150','m',19)" class="product">
     <img src="gallery/m4.jpg" alt="">
+    <h4 class="prod-title">Mărțișoare-păstrează tradiția</h4>
     <p>150 lei</p>
   </div>
   <div onclick="new Product('gallery/p4.jpg','Primăvara','200','p',14)" class="product">
     <img src="gallery/p4.jpg" alt="">
+    <h4 class="prod-title">Dăruiește primăvară</h4>
     <p>200 lei</p>
   </div>
   <div onclick="new Product('gallery/t3.jpg','Toamna de aur','180','t',3)" class="product">
     <img src="gallery/t3.jpg" alt="">
+    <h4 class="prod-title">Toamna de aur</h4>
     <p>180 lei</p>
   </div>
   `;
@@ -98,32 +105,79 @@ function addMore() {
 
 function addMoreRu() {
   productPage.innerHTML = `
-  <div onclick="new ProductRu('gallery/an1.jpg','Anul Nou','150','an',10)" class="product">
+  <div onclick="new ProductRu('gallery/an1.jpg','Новый год','150','an',10)" class="product">
     <img src="gallery/an1.jpg" alt="">
+    <h4 class="prod-title">Сказочный Новый год</h4>
     <p>150 lei</p>
   </div>
-  <div onclick="new ProductRu('gallery/b5.jpg','Bentițe','45','b',25)" class="product">
+  <div onclick="new ProductRu('gallery/b5.jpg','Ленты','45','b',25)" class="product">
     <img src="gallery/b5.jpg" alt="">
+    <h4 class="prod-title">Повязки для принцесс</h4>
     <p>45 lei</p>
   </div>
-  <div onclick="new ProductRu('gallery/c11.jpg','Cutiuțe','250','c',12)" class="product">
+  <div onclick="new ProductRu('gallery/c11.jpg','Коробки','250','c',12)" class="product">
     <img src="gallery/c11.jpg" alt="">
+    <h4 class="prod-title">Чудесные коробки</h4>
     <p>250 lei</p>
   </div>
-  <div onclick="new ProductRu('gallery/e4.jpg','Ecusoane','35','e',13)" class="product">
+  <div onclick="new ProductRu('gallery/e4.jpg','Значки','35','e',13)" class="product">
     <img src="gallery/e4.jpg" alt="">
+    <h4 class="prod-title">Значки</h4>
     <p>35 lei</p>
   </div>
-  <div onclick="new ProductRu('gallery/m4.jpg','Mărțișoare','150','m',19)" class="product">
+  <div onclick="new ProductRu('gallery/m4.jpg','Мэрцишоаре','150','m',19)" class="product">
     <img src="gallery/m4.jpg" alt="">
+    <h4 class="prod-title">Мэрцишоаре-сохраняй традицию</h4>
     <p>150 lei</p>
   </div>
-  <div onclick="new ProductRu('gallery/p4.jpg','Primăvara','200','p',14)" class="product">
+  <div onclick="new ProductRu('gallery/p4.jpg','Весна','200','p',14)" class="product">
     <img src="gallery/p4.jpg" alt="">
+    <h4 class="prod-title">Дари весну</h4>
     <p>200 lei</p>
   </div>
-  <div onclick="new ProductRu('gallery/t3.jpg','Toamna de aur','180','t',3)" class="product">
+  <div onclick="new ProductRu('gallery/t3.jpg','Золотая осень','180','t',3)" class="product">
     <img src="gallery/t3.jpg" alt="">
+    <h4 class="prod-title">Золотая осень</h4>
+    <p>180 lei</p>
+  </div>
+  `;
+}
+
+function addMoreEn() {
+  productPage.innerHTML = `
+  <div onclick="new Product('gallery/an1.jpg','New Year','150','an',10)" class="product">
+    <img src="gallery/an1.jpg" alt="">
+    <h4 class="prod-title">Fairy New Year</h4>
+    <p>150 lei</p>
+  </div>
+  <div onclick="new Product('gallery/b5.jpg','Headbands','45','b',25)" class="product">
+    <img src="gallery/b5.jpg" alt="">
+    <h4 class="prod-title">Headbands for princesses</h4>
+    <p>45 lei</p>
+  </div>
+  <div onclick="new Product('gallery/c11.jpg','Boxes','250','c',12)" class="product">
+    <img src="gallery/c11.jpg" alt="">
+    <h4 class="prod-title">Magical boxes</h4>
+    <p>250 lei</p>
+  </div>
+  <div onclick="new Product('gallery/e4.jpg','Badges','35','e',13)" class="product">
+    <img src="gallery/e4.jpg" alt="">
+    <h4 class="prod-title">Badges</h4>
+    <p>35 lei</p>
+  </div>
+  <div onclick="new Product('gallery/m4.jpg','Mărțișoare','150','m',19)" class="product">
+    <img src="gallery/m4.jpg" alt="">
+    <h4 class="prod-title">Mărțișoare-save the tradition</h4>
+    <p>150 lei</p>
+  </div>
+  <div onclick="new Product('gallery/p4.jpg','Spring','200','p',14)" class="product">
+    <img src="gallery/p4.jpg" alt="">
+    <h4 class="prod-title">Offer Spring</h4>
+    <p>200 lei</p>
+  </div>
+  <div onclick="new Product('gallery/t3.jpg','Golden autumn','180','t',3)" class="product">
+    <img src="gallery/t3.jpg" alt="">
+    <h4 class="prod-title">Golden autumn</h4>
     <p>180 lei</p>
   </div>
   `;
