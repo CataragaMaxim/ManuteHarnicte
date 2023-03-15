@@ -288,7 +288,7 @@ class ProductRu {
           </div>
         </div>
       </div>
-      <h4>Gallery</h4>
+      <h4>Галерея</h4>
       <div class="gallery">
       </div>
     </div>
