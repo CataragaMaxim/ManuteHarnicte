@@ -700,6 +700,14 @@ h5 {
   height: 20px;
 }
 
+.social-media img {
+  height: 40px;
+}
+
+.social-media img:hover, .contact-data a:hover {
+  filter: invert(30%);
+}
+
 .contact-data a {
   text-decoration: underline;
 }
@@ -902,6 +910,9 @@ h5 {
   }
   .contact-data img {
     height: 15px;
+  }
+  .social-media img {
+    height: 40px;
   }
   .contact-form {
     align-items: center;

@@ -143,7 +143,7 @@ class ComandProd {
     <div class="comand-block">
       <img onclick="removeComandBlock()" class="remove-comand-img" src="img/remove.png">
       <h4>Comandă</h4>
-      <p>Pentru a comanda apelați la numărul <a href="tel:+37360905200">+373 60 905 200</a>.</p>
+      <p>Pentru a comanda apelați la numărul <a target="_blank" rel="noopener noreferrer" href="tel:+37360905200">+373 60 905 200</a>.</p>
     </div>
     `
     body.appendChild(infoBlock);
@@ -159,7 +159,7 @@ class ComandProdEn {
     <div class="comand-block">
       <img onclick="removeComandBlock()" class="remove-comand-img" src="img/remove.png">
       <h4>Order</h4>
-      <p>To order call the number <a href="tel:+37360905200">+373 60 905 200</a>.</p>
+      <p>To order call the number <a target="_blank" rel="noopener noreferrer" href="tel:+37360905200">+373 60 905 200</a>.</p>
     </div>
     `
     body.appendChild(infoBlock);
@@ -175,7 +175,7 @@ class ComandProdRu {
     <div class="comand-block">
       <img onclick="removeComandBlock()" class="remove-comand-img" src="img/remove.png">
       <h4>Заказать</h4>
-      <p>Для заказа звоните по номеру <a href="tel:+37360905200">+373 60 905 200</a>.</p>
+      <p>Для заказа звоните по номеру <a target="_blank" rel="noopener noreferrer" href="tel:+37360905200">+373 60 905 200</a>.</p>
     </div>
     `
     body.appendChild(infoBlock);
